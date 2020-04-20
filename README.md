@@ -12,3 +12,6 @@
 # Source : 
 [techgaun/nepali-names](https://github.com/techgaun/nepali-names)
 
+# Contributing
+Pull requests are welcome.
+
