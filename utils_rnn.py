@@ -89,7 +89,6 @@ def rnn_step_backward(dy, gradients, parameters, x, a, a_prev):
 
 def rnn_forward_with_loss(X, Y, a0, parameters, vocab_size = 27):
     
-    # Initialize x, a and y_hat as empty dictionaries
     x, a, y_hat = {}, {}, {}
     a[-1] = np.copy(a0)
  
@@ -171,5 +170,54 @@ def print_sample(sample_idx, idx_to_char):
 
 def smooth(loss, cur_loss):
     return loss * 0.999 + cur_loss * 0.001
+
+# Defining a model
+def model(data, filename, idx_to_char, char_to_idx, num_iter = 35000, n_a = 50, nepali_name = 10, vocab_size=27):
+    
+    n_x, n_y = vocab_size, vocab_size
+    loss = -np.log(1.0/vocab_size)*nepali_name
+    loss_points = []
+    
+    parameters = initialize_parameters(n_a, n_x, n_y)
+    with open(filename) as f:
+        training_examples = f.readlines()
+    training_examples = [x.lower().strip() for x in training_examples]
+    # Initialize the hidden state 
+    a_prev = np.zeros((n_a, 1))
+    np.random.shuffle(training_examples)
+    
+    for j in range(num_iter):
+        # Mod ie. % returns back to index 0 once we reach end of the examples
+        idx = j % len(training_examples)
+        # Get an example from idx 
+        single_training_example = training_examples[idx]
+        # Get all the characters from the single training example
+        single_training_character = [char for char in single_training_example]
+        # Get the indexes of the characters in the single training example
+        single_example_idx = [char_to_idx[ch] for ch in single_training_character]
+        # None prepended to set the input vector to 0 vector
+        X = [None] + single_example_idx
+        idx_newline = char_to_idx["\n"]
+        Y = X[1:] + [idx_newline]
+        
+        curr_loss, gradients, a_prev = optimize(X,Y,a_prev,parameters,learning_rate=0.01)
+        loss = smooth(loss, curr_loss)
+        
+        if j % 2000 == 0:
+            
+            print('Iteration: %d, Loss: %f' % (j, loss) + '\n')
+            loss_points.append(loss)
+            
+            for name in range(nepali_name):
+                
+                # Sample indices and print them
+                sampled_indices = sample(parameters, char_to_idx)
+                print_sample(sampled_indices, idx_to_char)
+      
+            print('\n')
+        
+    return loss_points
+
+        
 
 
