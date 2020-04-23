@@ -1,10 +1,11 @@
 # Nepali Name Generation with RNN
 
-# At Iteration 0 : 
-<img width="857" alt="Screen Shot 2020-04-20 at 10 51 05 AM" src="https://user-images.githubusercontent.com/53033648/79765719-fa3aa580-82f4-11ea-9e32-d6f4ca5d3289.png">
+### Loss of the Model with 320000 iterations :
 
-# At Iteration 30000 : 
-<img width="343" alt="Screen Shot 2020-04-20 at 10 51 19 AM" src="https://user-images.githubusercontent.com/53033648/79765720-fa3aa580-82f4-11ea-898d-26a659a20b48.png">
+![Loss](https://user-images.githubusercontent.com/53033648/80145857-d8ecea00-857e-11ea-961f-0cd4d5923eac.png)
+
+# Names at Iteration 0 : 
+<img width="334" alt="Screen Shot 2020-04-23 at 4 23 09 PM" src="https://user-images.githubusercontent.com/53033648/80145872-e3a77f00-857e-11ea-85f3-a9310aad259e.png">
 
 
 
@@ -14,4 +15,3 @@
 
 # Contributing
 Pull requests are welcome.
-
