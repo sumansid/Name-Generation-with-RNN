@@ -1,6 +1,6 @@
 # Nepali Name Generation with RNN
 
-### Loss of the Model with 320000 iterations :
+### Loss of the RNN Model :
 
 ![Loss](https://user-images.githubusercontent.com/53033648/80145857-d8ecea00-857e-11ea-961f-0cd4d5923eac.png)
 
