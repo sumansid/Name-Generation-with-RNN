@@ -17,7 +17,7 @@
 
 
 
-# Source : 
+### Sources : 
 [techgaun/nepali-names](https://github.com/techgaun/nepali-names)
 
 [Character-level Recurrent Neural Networks in Practice: Comparing Training and Sampling Schemes](https://arxiv.org/pdf/1801.00632.pdf)
