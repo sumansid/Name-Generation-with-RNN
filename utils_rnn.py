@@ -1,12 +1,7 @@
 import numpy as np
-#!/usr/bin/env python
-# coding: utf-8
+"""
 
-# # Recurrent Neural Network Implementation
-
-
-# Activation functions
-
+"""
 
 def softmax(x):
     e_x = np.exp(x - np.max(x))
@@ -218,6 +213,4 @@ def model(data, filename, idx_to_char, char_to_idx, num_iter = 35000, n_a = 50, 
         
     return loss_points
 
-        
-
-
+      
