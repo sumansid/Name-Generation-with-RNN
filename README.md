@@ -1,4 +1,4 @@
-# Nepali Name Generation with RNN
+# Name Generation with RNN
 
 ### Loss of the RNN Model :
 
@@ -14,8 +14,6 @@
 ## Character level RNN architecture : 
 
 <img width="1022" alt="sample" src="https://user-images.githubusercontent.com/53033648/80164929-3b0e1500-85a8-11ea-8610-819b30590f84.png">
-
-
 
 ### Sources : 
 [techgaun/nepali-names](https://github.com/techgaun/nepali-names)
