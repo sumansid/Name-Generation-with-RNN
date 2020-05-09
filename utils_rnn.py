@@ -1,13 +1,13 @@
 import numpy as np
 """
-
+Date : 15/04/2020
+Author : Suman Sigdel
+File : Utils.py contains the utilities functions for the name generation model
 """
 
 def softmax(x):
     e_x = np.exp(x - np.max(x))
     return e_x / e_x.sum(axis=0)
-
-
 
 
 def sigmoid(x):
@@ -29,11 +29,7 @@ def initialize_parameters(n_a, n_x, n_y):
     return parameters
 
 
-
-
-
 # ## RNN Cell forward prop
-
 
 
 def rnn_cell_forward(a_prev, xt, parameters, vocab_size = 27):
@@ -198,13 +194,13 @@ def model(data, filename, idx_to_char, char_to_idx, num_iter = 35000, n_a = 50, 
         curr_loss, gradients, a_prev = optimize(X,Y,a_prev,parameters,learning_rate=0.01)
         loss = smooth(loss, curr_loss)
         
-        if j % 2000 == 0:
+        if j % 1000 == 0:
             
             print('Iteration: %d, Loss: %f' % (j, loss) + '\n')
             loss_points.append(loss)
-            
+            # Sampling the names
             for name in range(nepali_name):
-                
+
                 # Sample indices and print them
                 sampled_indices = sample(parameters, char_to_idx)
                 print_sample(sampled_indices, idx_to_char)
@@ -212,5 +208,3 @@ def model(data, filename, idx_to_char, char_to_idx, num_iter = 35000, n_a = 50, 
             print('\n')
         
     return loss_points
-
-      
