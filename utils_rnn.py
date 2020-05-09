@@ -1,6 +1,6 @@
 import numpy as np
 """
-Date : 15/04/2020
+Date : 08/05/2020
 Author : Suman Sigdel
 File : Utils.py contains the utilities functions for the name generation model
 """
