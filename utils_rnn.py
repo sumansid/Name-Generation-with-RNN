@@ -1,15 +1,16 @@
-import numpy as np
 """
 Date : 08/05/2020
 Author : Suman Sigdel
 File : Utils.py contains the utilities functions for the name generation model
 """
+import numpy as np
 
+# Softmax function
 def softmax(x):
     e_x = np.exp(x - np.max(x))
     return e_x / e_x.sum(axis=0)
 
-
+# Sigmoid function
 def sigmoid(x):
     return 1 / (1 + np.exp(-x))
 
@@ -17,8 +18,7 @@ def sigmoid(x):
 
 def initialize_parameters(n_a, n_x, n_y):
     # Weights and Bias of hidden and output
-  
-    Wax = np.random.randn(n_a, n_x)*0.01 # Weight scaling
+    Wax = np.random.randn(n_a, n_x)*0.01 # Weight scaling (to keep the same distribution)
     Waa = np.random.randn(n_a, n_a)*0.01 
     Wya = np.random.randn(n_y, n_a)*0.01 
     b = np.zeros((n_a, 1))
