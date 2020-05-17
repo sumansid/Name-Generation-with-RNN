@@ -29,7 +29,7 @@ def initialize_parameters(n_a, n_x, n_y):
     return parameters
 
 
-# ## RNN Cell forward prop
+# RNN Cell forward prop
 
 
 def rnn_cell_forward(a_prev, xt, parameters, vocab_size = 27):
