@@ -55,7 +55,7 @@ def rnn_cell_forward(a_prev, xt, parameters, vocab_size = 27):
 
 # ## RNN Forward propagation
 
-# In[14]:
+
 
 def rnn_step_forward(parameters, a_prev, x):
     
@@ -117,7 +117,6 @@ def clip_gradient(gradients, maxValue):
 
 
 def rnn_backward(X, Y, parameters, cache):
-    
     gradients = {}
    
     (y_hat, a, x) = cache
@@ -134,7 +133,6 @@ def rnn_backward(X, Y, parameters, cache):
    
     
     return gradients, a
-    
     
 def update_parameters(parameters, gradients, learning_rate):
     lr = learning_rate
