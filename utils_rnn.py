@@ -35,7 +35,6 @@ def initialize_parameters(n_a, n_x, n_y):
 def rnn_cell_forward(a_prev, xt, parameters, vocab_size = 27):
     """
     Function that computes the forward prop for each RNN cell
-    
     parameters : Dictionary containing the weights and biases
     """
     Wax = parameters["Wax"]
@@ -154,7 +153,8 @@ def optimize(X, Y, a_prev, parameters, learning_rate = 0.01):
 
 def print_sample(sample_idx, idx_to_char):
     txt = ''.join(idx_to_char[idx] for idx in sample_idx)
-    txt = txt[0].upper() + txt[1:]  # capitalize first character 
+    # capitalize first character 
+    txt = txt[0].upper() + txt[1:]  
     print ('%s' % (txt, ), end='')
 
 def smooth(loss, cur_loss):
@@ -166,7 +166,6 @@ def model(data, filename, idx_to_char, char_to_idx, num_iter = 35000, n_a = 50, 
     n_x, n_y = vocab_size, vocab_size
     loss = -np.log(1.0/vocab_size)*nepali_name
     loss_points = []
-    
     parameters = initialize_parameters(n_a, n_x, n_y)
     with open(filename) as f:
         training_examples = f.readlines()
@@ -202,7 +201,5 @@ def model(data, filename, idx_to_char, char_to_idx, num_iter = 35000, n_a = 50, 
                 # Sample indices and print them
                 sampled_indices = sample(parameters, char_to_idx)
                 print_sample(sampled_indices, idx_to_char)
-      
             print('\n')
-        
     return loss_points
