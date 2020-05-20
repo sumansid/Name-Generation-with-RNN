@@ -61,7 +61,6 @@ def rnn_step_forward(parameters, a_prev, x):
     Waa, Wax, Wya, by, b = parameters['Waa'], parameters['Wax'], parameters['Wya'], parameters['by'], parameters['b']
     a_next = np.tanh(np.dot(Wax, x) + np.dot(Waa, a_prev) + b) # hidden state
     p_t = softmax(np.dot(Wya, a_next) + by) # unnormalized log probabilities for next chars # probabilities for next chars 
-    
     return a_next, p_t
 
 def rnn_step_backward(dy, gradients, parameters, x, a, a_prev):
@@ -129,8 +128,7 @@ def rnn_backward(X, Y, parameters, cache):
         dy = np.copy(y_hat[t])
         dy[Y[t]] -= 1
         gradients = rnn_step_backward(dy, gradients, parameters, x[t], a[t], a[t-1])
-   
-    
+  
     return gradients, a
     
 def update_parameters(parameters, gradients, learning_rate):
