@@ -1,6 +1,6 @@
 # Name Generation with RNN
 
-Character level Reccurent Neural Network trained with Nepali names.
+Character level Reccurent Neural Network trained with Nepali names. In order to account for the exploding gradient problem, the model was implemented with [Gradient Clipping](https://deepai.org/machine-learning-glossary-and-terms/gradient-clipping).
 
 ### Loss of the RNN Model :
 
