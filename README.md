@@ -22,7 +22,7 @@ Character level Reccurent Neural Network trained with Nepali names.
 
 [Character-level Recurrent Neural Networks in Practice: Comparing Training and Sampling Schemes](https://arxiv.org/pdf/1801.00632.pdf)
 
-[](http://karpathy.github.io/2015/05/21/rnn-effectiveness/)
+[The Unreasonable Effectiveness of Recurrent Neural Networks](http://karpathy.github.io/2015/05/21/rnn-effectiveness/)
 
 
 # Contributing
