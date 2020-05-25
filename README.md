@@ -1,5 +1,7 @@
 # Name Generation with RNN
 
+Character level Reccurent Neural Network trained with Nepali names.
+
 ### Loss of the RNN Model :
 
 ![Loss](https://user-images.githubusercontent.com/53033648/80145857-d8ecea00-857e-11ea-961f-0cd4d5923eac.png)
@@ -19,6 +21,9 @@
 [techgaun/nepali-names](https://github.com/techgaun/nepali-names)
 
 [Character-level Recurrent Neural Networks in Practice: Comparing Training and Sampling Schemes](https://arxiv.org/pdf/1801.00632.pdf)
+
+[](http://karpathy.github.io/2015/05/21/rnn-effectiveness/)
+
 
 # Contributing
 Pull requests are welcome.
